@@ -1,0 +1,37 @@
+# check os
+# install apache
+# reload servers
+
+---
+- name: Set Arm Servers
+  hosts: all
+  become: yes
+  
+  vars:
+   test_vars: "data"
+
+
+  tasks:
+   - name: Ping servers
+     ping:
+
+   - name: Show OS information
+     debug:
+      msg: "{{ansible_os_family}}"
+
+   - name: Install Apache
+     apt:
+      name: apache2
+      state: latest
+     notify: Restart Apache
+
+  
+   
+  handlers:
+   - name: Restar Apache
+     service: 
+      name: apache2
+      state: restarted
+
+   - name: Restart Server
+     shell: restart now
