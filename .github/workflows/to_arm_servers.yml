@@ -22,7 +22,21 @@ jobs:
   # This workflow contains a single job called "build"
   my-testing-job:
     runs-on:  ubuntu-latest
+    env:
+     VAR_1: "First local var"
+     VAR_2: "Second local var"
+    
     steps:
+      - name: Print env local var
+        run: |
+         echo " var 1 = ${{ env.VAR_1 }}"
+         echo " var 2 = ${{ env.VAR_2 }}"
+         echo "step var = $STEP_LOCAL_VAR"
+        env: 
+         STEP_LOCAL_VAR: "Var for step"
+         
+         
+         
       - name: Show test
         run: echo "Hi, i'm test"
       - name: Show first line
