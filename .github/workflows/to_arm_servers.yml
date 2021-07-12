@@ -3,7 +3,7 @@
 name: CI
 env:
  APP_NAME: "Test app"
- DEPLOY_PACKAGE_NAME: "app_deploy_version:${{ github.sha }}"
+ DEPLOY_PACKAGE_NAME: "app_deploy_version:${{ github.sha }}" 
  
 
 # Controls when the workflow will run
