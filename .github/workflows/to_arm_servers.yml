@@ -36,6 +36,19 @@ jobs:
       - name: Print deploy package
         run: echo "Deploy package name is ${{ env.DEPLOY_PACKAGE_NAME }}"
         
+        
+      - name: List current folder
+        run: ls -la
+        
+      - name: Git Clone my repo
+        uses: action/checkout@v1
+        
+      - name: List current folder
+        run: ls -la
+      
+      - name: Check ZIP
+        run: zip
+      
       
         
      
